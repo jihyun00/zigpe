@@ -19,6 +19,10 @@ class User(Base):
 
     mail = Column(Unicode, nullable=False, unique=True)
 
+    belong_to = Column(Unicode, nullable=False)
+
+    position = Column(Unicode, nullable=False)
+
     credentials = relationship(
                       'Credential', cascade='all, delete-orphan',
                       collection_class=attribute_mapped_collection('sort'))
